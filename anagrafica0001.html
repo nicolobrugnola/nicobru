@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Esercizio Tabella Dati</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 30px;
+      color: #333;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    /* Container con ombra e bordi arrotondati */
+    .gabbia {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin-bottom: 30px;
+    }
+
+    .campo {
+      margin-bottom: 12px;
+    }
+
+    .campo label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .campo input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box; /* Mantiene la larghezza corretta */
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    /* Stile della tabella */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #3498db;
+      color: white;
+    }
+
+    /* Riga colorata alternata per leggibilità */
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Gabbia Input -->
+  <div class="gabbia">
+    <h2>Inserimento Dati</h2>
+    
+    <div class="campo">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome">
+    </div>
+    
+    <div class="campo">
+      <label for="cognome">Cognome:</label>
+      <input type="text" id="cognome">
+    </div>
+    
+    <div class="campo">
+      <label for="indirizzo">Indirizzo:</label>
+      <input type="text" id="indirizzo">
+    </div>
+    
+    <div class="campo">
+      <label for="citta">Città:</label>
+      <input type="text" id="citta">
+    </div>
+    
+    <div class="campo">
+      <label for="eta">Età:</label>
+      <input type="number" id="eta">
+    </div>
+    
+    <button onclick="aggiungiRiga()">Aggiungi alla Tabella</button>
+  </div>
+
+  <!-- Tabella Dati -->
+  <h2>Elenco Registrato</h2>
+  <table id="miaTabella">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Indirizzo</th>
+        <th>Città</th>
+        <th>Età</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Le righe finiscono qui -->
+    </tbody>
+  </table>
+
+  <script>
+    function aggiungiRiga() {
+      // 1. Leggo i valori inseriti
+      let nome = document.getElementById("nome").value;
+      let cognome = document.getElementById("cognome").value;
+      let indirizzo = document.getElementById("indirizzo").value;
+      let citta = document.getElementById("citta").value;
+      let eta = document.getElementById("eta").value;
+
+      // 2. Controllo se i campi sono compilati
+      if (nome === "" || cognome === "" || indirizzo === "" || citta === "" || eta === "") {
+        alert("Compila tutti i campi prima di aggiungere!");
+        return;
+      }
+
+      // 3. Prendo il riferimento alla tabella
+      let tabella = document.getElementById("miaTabella");
+
+      // 4. Inserisco una nuova riga (in fondo)
+      let riga = tabella.insertRow(-1);
+
+      // 5. Inserisco le celle
+      let cella1 = riga.insertCell(0);
+      let cella2 = riga.insertCell(1);
+      let cella3 = riga.insertCell(2);
+      let cella4 = riga.insertCell(3);
+      let cella5 = riga.insertCell(4);
+
+      // 6. Assegno il valore del testo
+      cella1.textContent = nome;
+      cella2.textContent = cognome;
+      cella3.textContent = indirizzo;
+      cella4.textContent = citta;
+      cella5.textContent = eta;
+
+      // 7. Svuoto i campi input
+      document.getElementById("nome").value = "";
+      document.getElementById("cognome").value = "";
+      document.getElementById("indirizzo").value = "";
+      document.getElementById("citta").value = "";
+      document.getElementById("eta").value = "";
+    }
+  </script>
+
+</body>
+</html>
