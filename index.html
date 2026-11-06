@@ -43,27 +43,36 @@
             font-size: 16px;
         }
         .projects {
-            text-align: left;
             margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
-        .project-card {
-            background: #f9f9f9;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 6px;
-            border-left: 4px solid #007bff;
+        .btn-project {
+            display: block;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .project-card h3 {
-            margin: 0 0 5px 0;
-            color: #007bff;
+        .btn-project:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
         }
-        .project-card p {
-            margin: 0;
-            color: #555;
-            font-size: 14px;
+        .btn-project span {
+            display: block;
+            font-size: 13px;
+            font-weight: normal;
+            margin-top: 4px;
+            opacity: 0.9;
         }
         .footer {
-            margin-top: 30px;
+            margin-top: 35px;
             font-size: 14px;
         }
         .footer a {
@@ -85,19 +94,20 @@
         <h1>Nicolò Brugnola</h1>
         <p class="bio">pagina di presentazione!</p>
 
-        <!-- Sezione Lavori -->
+        <!-- Sezione Pulsanti Lavori -->
+        <h2>I Miei Lavori</h2>
         <div class="projects">
-            <h2>I Miei Lavori</h2>
-            
-            <div class="project-card">
-                <h3>Anagrafica</h3>
-                <p>Un'applicazione o script per la gestione e l'organizzazione dei dati anagrafici.</p>
-            </div>
+            <!-- Tasto Anagrafica -->
+            <a href="anagrafica0001.html" target="_blank" class="btn-project">
+                📁 Anagrafica
+                <span>Apri l'applicazione Anagrafica</span>
+            </a>
 
-            <div class="project-card">
-                <h3>Calcolatrice</h3>
-                <p>Calcoli e operazioni matematiche.</p>
-            </div>
+            <!-- Tasto Calcolatrice -->
+            <a href="calcol.html" target="_blank" class="btn-project">
+                🧮 Calcolatrice
+                <span>Apri la Calcolatrice</span>
+            </a>
         </div>
 
         <!-- Footer / Link GitHub -->
