@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Semi-Calcolatrice Base</title>
+  <style>
+    /* Layout semplice a blocchi messi in colonna */
+    .calcolatrice {
+      width: 200px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    input {
+      width: 90%;
+      margin-bottom: 5px;
+      padding: 5px;
+    }
+    /* I bottoni stanno in riga; per aggiungerne altri basta inserire nuovi <button> */
+    .tasti {
+      margin: 10px 0;
+    }
+    button {
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calcolatrice">
+    <!-- 2 input di testo -->
+    <input type="text" id="n1" placeholder="Numero 1">
+    <input type="text" id="n2" placeholder="Numero 2">
+
+    <!-- 4 tasti per le operazioni -->
+    <div class="tasti">
+      <button onclick="op = '+'">+</button>
+      <button onclick="op = '-'">-</button>
+      <button onclick="op = '*'">*</button>
+      <button onclick="op = '/'">/</button>
+    </div>
+
+    <!-- 5° tasto (Uguale) -->
+    <button onclick="calcola()" style="width: 100%;">=</button>
+
+    <!-- Output risultato -->
+    <h3 id="res">---</h3>
+  </div>
+
+  <script>
+    // Variabile globale semplice per memorizzare l'operazione
+    let op = '';
+
+    function calcola() {
+      let v1 = parseFloat(document.getElementById('n1').value);
+      let v2 = parseFloat(document.getElementById('n2').value);
+      let res = document.getElementById('res');
+
+      if (isNaN(v1) || isNaN(v2)) {
+        res.innerText = "Inserisci numeri";
+        return;
+      }
+
+      if (op === '+') res.innerText = v1 + v2;
+      else if (op === '-') res.innerText = v1 - v2;
+      else if (op === '*') res.innerText = v1 * v2;
+      else if (op === '/') res.innerText = (v2 !== 0) ? (v1 / v2) : "Errore: /0";
+      else res.innerText = "Scegli un segno (+, -, *, /)";
+    }
+  </script>
+
+</body>
+</html>
