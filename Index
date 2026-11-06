@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Miei Lavori - Nicolò Brugnola</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        p.subtitle {
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+        .projects {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #34495e;
+        }
+        .card p {
+            font-size: 14px;
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Nicolò Brugnola</h1>
+        <p class="subtitle">I miei progetti principali</p>
+
+        <div class="projects">
+            <!-- Progetto Anagrafica -->
+            <div class="card">
+                <h3>Anagrafica</h3>
+                <p>Gestione dati e registrazioni.</p>
+                <a href="./anagrafica0001.html" target="_blank" class="btn">Apri</a>
+            </div>
+
+            <!-- Progetto Calcolatrice -->
+            <div class="card">
+                <h3>Calcolatrice</h3>
+                <p>Semplice calcolatrice interattiva.</p>
+                <a href="./calcol.html" target="_blank" class="btn">Apri</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
